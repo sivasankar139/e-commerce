@@ -1,9 +1,9 @@
 import { addDoc, collection } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
-import { Button, Modal } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 import { FaTrash } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Layout from "../Components/Layout";
 import db from "../fireConfig";
@@ -106,8 +106,6 @@ const Cartpage = () => {
         </Modal.Header>
         <Modal.Body>
           <div className="register-form-latest">
-            {/* <h2>Register</h2>
-            <hr /> */}
             <input
               type="text"
               className="form-control"
@@ -136,10 +134,7 @@ const Cartpage = () => {
               value={number}
               onChange={(e) => setNumber(e.target.value)}
             />
-            {/* <button className="my-3" onClick={register}>REGISTER</button>
-             {/* <button onClick={()=>navigate("/login") } className="mx-3">LOGIN</button> */}
-            {/* <hr/> */}
-            {/* <Link to="/login">Click here to Login</Link> */}
+           
           </div>
         </Modal.Body>
         <Modal.Footer>
