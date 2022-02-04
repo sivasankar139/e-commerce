@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Layout from "../Components/Layout";
-
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { firebaseProducts } from "../firebaseProducts";
 import db from "../fireConfig";
 import {
   addDoc,
@@ -21,17 +17,18 @@ const AdminPage = () => {
   const [products, setProducts] = useState([]);
   const [orders, setOrders] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const [add, setAdd] = useState(false);
   const [product, setProduct] = useState({
     name: "",
     price: 0,
     imageURL: "",
     category: "",
   });
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  const [add, setAdd] = useState(false);
+  
   useEffect(() => {
     getData();
   }, []);
