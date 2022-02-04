@@ -1,0 +1,56 @@
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+.navbar{
+    background-color: #003F5C !important;
+}
+.nav-link{
+    color: white !important;
+    font-weight: bold;
+}
+.navbar-brand{
+    color: white !important;
+}
+.content{
+    padding-top: 80px;
+}
+.footer{
+    padding:10px;
+    background-color: #003F5C;
+    color: white;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+button{
+    background-color: #003F5C;
+    box-shadow: none;
+    color: #fff;
+    padding: 5px;
+    border: 1px sold rgba(255, 255, 255, 0.534);
+}
+button:hover{
+    background-color: tomato;
+}
+.loader{
+position: absolute;
+top: 50%;
+left: 50%;
+translate: (-50%,-50%);
+}
+.spinner-border{
+    height: 80px;
+    width: 80px;
+}
+.nav-item button{
+    color: black !important;
+}
+.nav-tabs{
+    background-color: cadetblue;
+}
