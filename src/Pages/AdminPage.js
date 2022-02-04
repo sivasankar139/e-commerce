@@ -32,6 +32,7 @@ const AdminPage = () => {
   useEffect(() => {
     getData();
   }, []);
+// get data from the firestore
   const getData = async () => {
     try {
       setLoading(true);
@@ -52,10 +53,12 @@ const AdminPage = () => {
       setLoading(false);
     }
   };
+
   const editHandler = (item) => {
     setProduct(item);
     setShow(true);
   };
+  //update product data
   const updateProduct = async () => {
     try {
       setLoading(true);
@@ -71,6 +74,7 @@ const AdminPage = () => {
       toast.error("Update failed");
     }
   };
+  // ADD new product 
   const addProductData = async () => {
     try {
       setLoading(true);
@@ -86,10 +90,12 @@ const AdminPage = () => {
       toast.error("product adding failed");
     }
   };
+  // add product for open modal
   const addProduct = () => {
     setAdd(true);
     handleShow();
   };
+  // delete product 
   const deleteProduct = async (item) => {
     try {
       setLoading(true);
@@ -260,7 +266,7 @@ const AdminPage = () => {
                 </table>
               })}
         </Tab>
-        <Tab eventKey="contact" title="Contact" disabled></Tab>
+        {/* <Tab eventKey="contact" title="users" disabled></Tab> */}
       </Tabs>
 
      
