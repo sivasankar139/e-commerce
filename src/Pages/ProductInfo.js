@@ -14,6 +14,7 @@ const ProductInfo = () => {
   useEffect(() => {
     getData();
   }, []);
+  console.log("productinfopage", cartItems)
   const getData = async () => {
     setLoading(true)
     const productData = await getDoc(doc(db, "products", params.productId));
@@ -21,6 +22,7 @@ const ProductInfo = () => {
     setProduct(productData.data());
     setLoading(false)
   };
+  console.log("product", product)
   const addToCart = (product) => {
     dispatch({ type: "ADD_TO_CART", payload: product });
   };
@@ -45,7 +47,12 @@ const ProductInfo = () => {
                 <hr />
                 <p>{product.description}</p>
                 <div className="d-flex justify-content-end my-3">
-                  <button onClick={()=>addToCart(product)}>ADD TO CART</button>
+                  <button onClick={()=>addToCart(product)}
+                  disabled={cartItems.find((x) => {
+                    if (x.id === product.id) {
+                      return true;
+                    }
+                  })}>ADD TO CART</button>
                 </div>
               </div>
             )}

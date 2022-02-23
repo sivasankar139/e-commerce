@@ -15,7 +15,7 @@ const LoginPage = () => {
       const result=await signInWithEmailAndPassword(auth, email, password);
       localStorage.setItem('currentUser',JSON.stringify(result))
       setLoading(false)
-      toast.success("Login Success");
+      // toast.success("Login Success");
       navigate("/");
     }
     catch(error){
@@ -54,13 +54,13 @@ const LoginPage = () => {
           </div>
         </div>
         <div className="col-md-5 login-animation">
-          <lottie-player
+          {/* <lottie-player
             src="https://assets3.lottiefiles.com/private_files/lf30_otdghgza.json"
             background="transparent"
             speed="1"
             loop
             autoplay
-          ></lottie-player>
+          ></lottie-player> */}
         </div>
       </div>
       <div className="login-bottom"></div>
